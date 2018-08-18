@@ -478,7 +478,7 @@ public class AHBottomNavigation extends FrameLayout {
 				title.setTextColor(itemDisableColor);
 			}
 
-			LayoutParams params = new LayoutParams((int) itemWidth, (int) (height*0.5f + resources.getDimension(R.dimen.bottom_navigation_icon) / 2));
+			LayoutParams params = new LayoutParams((int) itemWidth, (int) (height*0.5f + resources.getDimension(R.dimen.bottom_navigation_icon) * 0.66f));
 			linearLayout.addView(view, params);
 			views.add(view);
 		}
