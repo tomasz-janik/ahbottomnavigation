@@ -33,10 +33,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotificationHelper;
@@ -265,6 +262,7 @@ public class AHBottomNavigation extends FrameLayout {
 		views.clear();
 		backgroundColorView = new View(context);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+		    //Toast.makeText(getContext(),"kurwa",Toast.LENGTH_LONG).show();
 			LayoutParams backgroundLayoutParams = new LayoutParams(
 					ViewGroup.LayoutParams.MATCH_PARENT, calculateHeight(layoutHeight));
 			addView(backgroundColorView, backgroundLayoutParams);
@@ -378,10 +376,15 @@ public class AHBottomNavigation extends FrameLayout {
 		}
 
 		float itemWidth = layoutWidth / items.size();
+		float temp = itemWidth;
+		//Toast.makeText(getContext(),"l",Toast.LENGTH_LONG).show();
 		if (itemWidth < minWidth) {
 			itemWidth = minWidth;
+			//Toast.makeText(getContext(),"ts",Toast.LENGTH_LONG).show();
 		} else if (itemWidth > maxWidth) {
 			itemWidth = maxWidth;
+			//Toast.makeText(getContext(),"l",Toast.LENGTH_LONG).show();
+
 		}
 
 		float activeSize = resources.getDimension(R.dimen.bottom_navigation_text_size_active);
@@ -408,14 +411,14 @@ public class AHBottomNavigation extends FrameLayout {
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
 			icon.setImageDrawable(item.getDrawable(context));
-			title.setText(item.getTitle(context));
+			//title.setText(item.getTitle(context));
 
 			if (titleTypeface != null) {
-				title.setTypeface(titleTypeface);
+				//title.setTypeface(titleTypeface);
 			}
 
 			if (titleState == TitleState.ALWAYS_SHOW && items.size() > MIN_ITEMS) {
-				container.setPadding(0, container.getPaddingTop(), 0, container.getPaddingBottom());
+			//	container.setPadding(0, container.getPaddingTop(), 0, container.getPaddingBottom());
 			}
 
 			if (current) {
@@ -455,8 +458,8 @@ public class AHBottomNavigation extends FrameLayout {
 					setBackgroundColor(defaultBackgroundColor);
 				}
 			}
-			
-			title.setTextSize(TypedValue.COMPLEX_UNIT_PX, current ? activeSize : inactiveSize);
+
+			//title.setTextSize(TypedValue.COMPLEX_UNIT_PX, current ? activeSize : inactiveSize);
 			
 			if (itemsEnabledStates[i]) {
 				view.setOnClickListener(new OnClickListener() {
@@ -475,7 +478,8 @@ public class AHBottomNavigation extends FrameLayout {
 				title.setTextColor(itemDisableColor);
 			}
 
-			LayoutParams params = new LayoutParams((int) itemWidth, (int) height);
+			//Toast.makeText(getContext(),""+temp+"/"+height,Toast.LENGTH_LONG).show();
+			LayoutParams params = new LayoutParams((int) itemWidth, (int) (height*0.75f));
 			linearLayout.addView(view, params);
 			views.add(view);
 		}
@@ -529,15 +533,15 @@ public class AHBottomNavigation extends FrameLayout {
 			icon.setImageDrawable(item.getDrawable(context));
 
 			if (titleState != TitleState.ALWAYS_HIDE) {
-				title.setText(item.getTitle(context));
+				//title.setText(item.getTitle(context));
 			}
 
 			if (titleActiveTextSize != 0) {
-				title.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleActiveTextSize);
+				//title.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleActiveTextSize);
 			}
 
 			if (titleTypeface != null) {
-				title.setTypeface(titleTypeface);
+				//title.setTypeface(titleTypeface);
 			}
 
 			if (i == currentItem) {
@@ -550,12 +554,12 @@ public class AHBottomNavigation extends FrameLayout {
 				if (titleState != TitleState.ALWAYS_HIDE) {
 					if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
 						ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) icon.getLayoutParams();
-						p.setMargins(p.leftMargin, activeMarginTop, p.rightMargin, p.bottomMargin);
+						//p.setMargins(p.leftMargin, activeMarginTop, p.rightMargin, p.bottomMargin);
 
 						ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
 								notification.getLayoutParams();
-						paramsNotification.setMargins(notificationActiveMarginLeft, notificationActiveMarginTop,
-								paramsNotification.rightMargin, paramsNotification.bottomMargin);
+						//paramsNotification.setMargins(notificationActiveMarginLeft, notificationActiveMarginTop,
+						//		paramsNotification.rightMargin, paramsNotification.bottomMargin);
 
 						view.requestLayout();
 					}
@@ -564,8 +568,8 @@ public class AHBottomNavigation extends FrameLayout {
 				icon.setSelected(false);
 				ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
 						notification.getLayoutParams();
-				paramsNotification.setMargins(notificationInactiveMarginLeft, notificationInactiveMarginTop,
-						paramsNotification.rightMargin, paramsNotification.bottomMargin);
+				//paramsNotification.setMargins(notificationInactiveMarginLeft, notificationInactiveMarginTop,
+				//		paramsNotification.rightMargin, paramsNotification.bottomMargin);
 			}
 
 			if (colored) {

@@ -11,13 +11,13 @@
     android:paddingRight="@dimen/bottom_navigation_padding_right">
 
     <ImageView
-        android:id="@+id/bottom_navigation_item_icon"
-        android:layout_width="@dimen/bottom_navigation_icon"
-        android:layout_height="@dimen/bottom_navigation_icon"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
-        android:layout_marginTop="@dimen/bottom_navigation_margin_top_inactive"
-        android:gravity="center"/>
+            android:id="@+id/bottom_navigation_item_icon"
+            android:layout_width="@dimen/bottom_navigation_icon"
+            android:layout_height="@dimen/bottom_navigation_icon"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
+            android:layout_marginTop="0dp"
+            android:gravity="center"/>
 
     <TextView
         android:id="@+id/bottom_navigation_item_title"
@@ -28,10 +28,11 @@
         android:layout_marginTop="@dimen/bottom_navigation_margin_top_inactive"
         android:gravity="center"
         android:lines="1"
-        android:visibility="gone"
         android:textColor="@color/colorBottomNavigationInactive"
         android:textSize="@dimen/bottom_navigation_text_size_inactive"
-        tools:text="Label One"/>
+        tools:text="Label One"
+        android:visibility="gone"
+    />
 
     <TextView
         android:id="@+id/bottom_navigation_notification"

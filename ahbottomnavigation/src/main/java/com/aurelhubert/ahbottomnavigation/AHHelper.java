@@ -48,7 +48,7 @@ public class AHHelper {
 	 * Update top margin with animation
 	 */
 	public static void updateTopMargin(final View view, int fromMargin, int toMargin) {
-		ValueAnimator animator = ValueAnimator.ofFloat(fromMargin, toMargin);
+		/*ValueAnimator animator = ValueAnimator.ofFloat(fromMargin, toMargin);
 		animator.setDuration(150);
 		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
@@ -61,7 +61,7 @@ public class AHHelper {
 				}
 			}
 		});
-		animator.start();
+		animator.start();*/
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class AHHelper {
 	 * Update left margin with animation
 	 */
 	public static void updateLeftMargin(final View view, int fromMargin, int toMargin) {
-		ValueAnimator animator = ValueAnimator.ofFloat(fromMargin, toMargin);
+		/*ValueAnimator animator = ValueAnimator.ofFloat(fromMargin, toMargin);
 		animator.setDuration(150);
 		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
@@ -101,14 +101,14 @@ public class AHHelper {
 				}
 			}
 		});
-		animator.start();
+		animator.start();*/
 	}
 
 	/**
 	 * Update text size with animation
 	 */
 	public static void updateTextSize(final TextView textView, float fromSize, float toSize) {
-		ValueAnimator animator = ValueAnimator.ofFloat(fromSize, toSize);
+		/*ValueAnimator animator = ValueAnimator.ofFloat(fromSize, toSize);
 		animator.setDuration(150);
 		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
@@ -117,7 +117,7 @@ public class AHHelper {
 				textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, animatedValue);
 			}
 		});
-		animator.start();
+		animator.start();*/
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class AHHelper {
 	 * Update width
 	 */
 	public static void updateWidth(final View view, float fromWidth, float toWidth) {
-		ValueAnimator animator = ValueAnimator.ofFloat(fromWidth, toWidth);
+		/*ValueAnimator animator = ValueAnimator.ofFloat(fromWidth, toWidth);
 		animator.setDuration(150);
 		animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
@@ -201,7 +201,7 @@ public class AHHelper {
 				view.setLayoutParams(params);
 			}
 		});
-		animator.start();
+		animator.start();*/
 	}
 
 	/**
